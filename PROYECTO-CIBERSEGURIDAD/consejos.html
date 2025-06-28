@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consejos de Seguridad</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Ciberseguridad</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="amenazas.html">Amenazas Comunes</a></li>
+                <li class="nav-item"><a class="nav-link" href="consejos.html">Consejos de Seguridad</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Consejos de Seguridad</h2>
+        <ul>
+            <li>Usa contraseñas fuertes.</li>
+            <li>No compartas información personal.</li>
+            <li>Mantén tu software actualizado.</li>
+            <!-- Agrega más consejos -->
+        </ul>
+
+        <!-- Formulario de Contacto -->
+        <h3 class="mt-4">Contáctanos</h3>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo:</label>
+                <input type="email" class="form-control" id="correo" required>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+        <!-- Botón para abrir el Modal -->
+        <button class="btn btn-success mt-4" data-toggle="modal" data-target="#testModal">Realizar Test de Seguridad</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="testModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="testModalLabel">Test de Seguridad</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="pregunta1">
+                            <p>1. ¿Qué tan segura es tu contraseña?</p>
+                            <button class="btn btn-outline-primary btn-block" onclick="respuesta(1, true)">Debe tener letras, números y símbolos</button>
+                            <button class="btn btn-outline-danger btn-block" onclick="respuesta(1, false)">Solo letras</button>
+                        </div>
+                    
+                        <div id="pregunta2" style="display:none;">
+                            <p>2. ¿Qué debes hacer si recibes un correo sospechoso?</p>
+                            <button class="btn btn-outline-primary btn-block" onclick="respuesta(2, true)">No abrirlo y reportarlo</button>
+                            <button class="btn btn-outline-danger btn-block" onclick="respuesta(2, false)">Abrirlo inmediatamente</button>
+                        </div>
+                    
+                        <div id="pregunta3" style="display:none;">
+                            <p>3. ¿Es importante actualizar el software?</p>
+                            <button class="btn btn-outline-primary btn-block" onclick="respuesta(3, true)">Sí, siempre</button>
+                            <button class="btn btn-outline-danger btn-block" onclick="respuesta(3, false)">No, no es necesario</button>
+                        </div>
+                    
+                        <div id="resultado" style="display:none;">
+                            <h5>Test Finalizado</h5>
+                            <p id="mensajeResultado"></p>
+                            <button class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                    
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
